@@ -1,0 +1,19 @@
+version: "3.8"
+
+services:
+  backend:
+    build:
+      context: ./backend
+    image: backend-demo:dev
+    ports:
+      - "5000:5000"
+    # (optional) if you have a backend/.env, uncomment:
+    # env_file:
+    #   - backend/.env
+
+  frontend:
+    build:
+      context: ./frontend
+    image: frontend-demo:dev
+    ports:
+      - "8080:80"
